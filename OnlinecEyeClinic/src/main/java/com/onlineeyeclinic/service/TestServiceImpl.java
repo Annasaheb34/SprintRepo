@@ -11,21 +11,24 @@ import com.onlineeyeclinic.dao.ITestRepo;
 import com.onlineeyeclinic.dto.TestModule;
 import com.onlineeyeclinic.exceptions.DoctorIdNotFoundException;
 import com.onlineeyeclinic.exceptions.TestIdNotFoundException;
+
+
+
 @Service
 public class TestServiceImpl implements ITestService{
 	@Autowired
 private ITestRepo testRepo;
 
 	@Override
-	public TestModule addTest(TestModule testModule) {
+	public TestModule addTest(TestModule test) {
 		// TODO Auto-generated method stub
-		return testRepo.saveAndFlush(testModule);
+		return testRepo.saveAndFlush(test);
 	}
 
 	@Override
-	public TestModule updateTest(TestModule testModule) {
+	public TestModule updateTest(TestModule test) {
 		// TODO Auto-generated method stub
-		return testRepo.saveAndFlush(testModule);
+		return testRepo.saveAndFlush(test);
 	}
 
 	@Override
@@ -54,9 +57,7 @@ private ITestRepo testRepo;
 	@Override
 	public List<TestModule> viewTestsByDoctor(int doctorId) throws DoctorIdNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return testRepo.getTestsByDoctor(doctorId);
 	}
-
-
 	
 }

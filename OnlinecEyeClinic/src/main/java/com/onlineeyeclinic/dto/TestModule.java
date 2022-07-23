@@ -16,17 +16,17 @@ public class TestModule {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="test_seq")
 	@SequenceGenerator(name="test_seq",sequenceName="test_seq",allocationSize=1)
 	@Column(name="test_Id")
-	int testId;
+int testId;
 	@Column(name="test_Name")
-	private String testName;
-	private String test_type;	
+private String testName;
+private String test_type;	
 	@Column(name="test_Cost")
-	private double testCost;
+private double testCost;
 	@Column(name="test_Description")
-	private String testDescriprion;
+private String testDescriprion;
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="doctor_Id",insertable = false,updatable=false)
-	private Doctor doctor;
+private Doctor doctor;
 	public int getTestId() {
 		return testId;
 	}
@@ -65,9 +65,9 @@ public class TestModule {
 		this.testCost = testCost;
 		this.testDescriprion = testDescriprion;
 	}
-	public TestModule() {
-
-	}
+public TestModule() {
+	
+}
 
 
 }
