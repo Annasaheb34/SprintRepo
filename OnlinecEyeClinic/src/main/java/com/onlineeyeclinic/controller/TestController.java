@@ -84,6 +84,7 @@ public class TestController {
 		
 		return new ResponseEntity<TestModule>(tests, HttpStatus.OK);
 	}
+    //get test
     @SuppressWarnings({ "rawtypes", "unchecked" })
 	@GetMapping("/getTests/{doctorId}")
 	public ResponseEntity<List<TestModule>> viewTests(@PathVariable("doctorId")Integer doctorId)throws DoctorIdNotFoundException{
